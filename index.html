@@ -178,5 +178,87 @@
         </div>
     </footer>
 </div>
+
+
+
+
+
+<div class="modal-app" id="detail-product">
+    <div class="wrap-modal">
+        <div class="back-drop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>Thông tin sản phẩm</span>
+                <span id="close-modal"> <img src="assets/images/icon/close.svg" alt=""></span>
+            </div>
+            <div class="modal-body">
+                <div class="detail-img">
+                    <img src="assets/images/product.jpg" alt="">
+                </div>
+                <div class="detail-ct">
+                    <h5 class="title-detail">Sườn non bò Mỹ rút xương (loại cao cấp) - Short Rib Boneless</h5>
+
+                    <div class="rating">
+                        <img src="assets/images/icon/star.svg" alt="">
+                        <img src="assets/images/icon/star.svg" alt="">
+                        <img src="assets/images/icon/star.svg" alt="">
+                        <img src="assets/images/icon/star.svg" alt="">
+                        <img src="assets/images/icon/star.svg" alt="">
+                    </div>
+                    <div class="rate-sl">
+                        <span>Mã sản phẩm: <strong>5627893</strong></span>
+                        <span>Xuất xứ: <strong>VN</strong></span>
+                        <span>HSD: <strong>1 năm</strong></span>
+                    </div>
+                    <div class="price-d">
+                        <strong>999.000đ/Kg</strong>
+                        <span>1.125.000đ/kg</span>
+                        <div class="discount">-11%</div>
+                    </div>
+                    <h4>Giới thiệu sản phẩm</h4>
+                    <p>Sườn bò rút xương Mỹ là phần thịt sườn đã lọc sạch xương (rút xương), trong Tiếng Anh gọi là Short rib Boneless, sườn non rút xương cùng với thăn nội ( Tenderloin) là một trong hai phần thịt ngon nhất con bò. Phần thịt này đặc trưng là mềm, thơm, ngọt, tan trong miệng của thực khách.
+                        Với công nghệ hiện đại của Mỹ, ngay sau khi cắt thịt sườn đã rút phần xương bằng máy móc hiện đại nên không làm thớ thịt bị mất mô liên kết, chính vì vậy thịt sườn rút xương vẫn luôn giữ được độ đậm đà đặc trưng của thịt bò trong bất kỳ món ăn nào.</p>
+                    <div class="add-cart">
+                        <div class="input-number">
+                            <button class="custom-btn-number up-button">+</button>
+                            <input disabled type="number" class="number-input" value="1" min="0">
+                            <button class="custom-btn-number down-button">-</button>
+                        </div>
+                        <button class="btn-main btn-add-cart">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/source.js"></script>
+<script>
+    const $productBtn = document.querySelectorAll('.pro-item')
+    const $modalDetail = document.getElementById('detail-product')
+    const $closeBtnModal = document.getElementById('close-modal')
+    const $backDropBtn = document.querySelector('.back-drop')
+    const $body = document.querySelector('body')
+    const openCloseModalDetail = (state) => {
+        if(state){
+            $modalDetail.classList.add('active')
+            $body.style.overflow = 'hidden'
+        } else {
+            $modalDetail.classList.remove('active')
+            $body.style.overflow = 'inherit'
+        }
+    }
+    $productBtn.forEach(item => {
+        item.onclick = () => {
+            openCloseModalDetail(true)
+        }
+    })
+    $closeBtnModal.onclick = () => {
+        openCloseModalDetail(false)
+    }
+    $backDropBtn.onclick = () => {
+        openCloseModalDetail(false)
+    }
+</script>
 </body>
 </html>

@@ -3,6 +3,7 @@
     --primary: #4074F9;
     --bs-progress-bar-bg: #4074F9;
     --font-family: 'SVN-Poppins', sans-serif;
+    --width-app: 460px
 }
 
 
@@ -28,6 +29,22 @@
     font-family: var(--font-family);
     box-sizing: border-box; outline: none;
 }
+
+.detail-img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.detail-img img {
+}
+
+.modal-header {
+    padding: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
 body {
     background: #f9f9f9;
     margin: 0;
@@ -35,7 +52,7 @@ body {
     font-size: 14px;
 }
 .wrapper {
-    max-width: 460px;
+    max-width: var(--width-app);
     margin: 0 auto;
     background: #fff;
 }
@@ -107,6 +124,7 @@ div#user .name {
     background: #fff;
     border-radius: 8px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .pro-item img {
@@ -230,6 +248,7 @@ img.logo-footer {
     border: 1.5px solid #E8EAED;
     width: fit-content;
     border-radius: 6px;
+    height: 40px;
 }
 
 .custom-btn-number {
@@ -237,6 +256,7 @@ img.logo-footer {
     background: none;
     padding: 10px 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 input.number-input {
@@ -408,4 +428,97 @@ input.number-input {
 .form-radio-select {
     display: flex;
     gap: 15px;
+}
+.modal-app{
+    position: fixed;
+    bottom: 0;
+    display: none;
+    width: var(--width-app);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,.3);
+    height: 100%;
+}
+.modal-app.active{
+    display: block;
+}
+.modal-app .modal-content {
+    background: #fff;
+    height: calc(100% - 60px);
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.back-drop{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    position: absolute;
+    z-index: 99;
+}
+.wrap-modal{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.modal-body {
+    height: calc(100% - 52px);
+    overflow-y: auto;
+    padding-bottom: 30px;
+}
+
+.add-cart {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-add-cart {
+    width: 40%;
+}
+.detail-ct{
+    padding: 15px;
+}
+#close-modal{
+    cursor: pointer;
+}
+.rate-sl {
+    display: flex;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.price-d {
+    display: flex;
+    position: relative;
+    gap: 10px;
+    display: inline-flex;
+}
+
+.price-d strong {
+    color: #E02D3C;
+    font-weight: bold;
+}
+
+.price-d span {
+    text-decoration: line-through;
+    color: #656E7E;
+}
+
+.price-d .discount {
+    position: absolute;
+    right: -42px;
+    top: -2px;
+    background: #E02D3C;
+    color: #fff;
+    padding: 1px 4px;
+    border-radius: 5px;
+}
+
+.title-detail {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 8px;
 }
